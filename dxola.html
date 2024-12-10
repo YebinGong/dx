@@ -2,32 +2,47 @@
 <html lang="en">
 
 <head>
+    
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
     <title>D-Xola</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>    
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
-<style>
-    .container-fluid-1{
-    display: flex; /* Flexbox 활성화 */
-    justify-content: center; /* 오른쪽 끝으로 정렬 */    
-    height: 100vh; /* 컨테이너 높이 (선택 사항) */
-}
+    <style>
+        .container-fluid-2 {
+            display: flex;
+            justify-content: flex-end; /* 오른쪽 끝 정렬 */
+            height: 70vh; /* 전체 화면 높이 (선택 사항) */
+        }
+        .rounded {
+            border-radius: 50px; /* 이미지 둥글게 처리 */
+        }
+    </style>
+    <style>
+        .container-fluid-1 {
+            display: flex;
+            justify-content: flex-end; /* 오른쪽 끝 정렬 */
+            height: 70vh; /* 전체 화면 높이 (선택 사항) */
+        }
+        .rounded {
+            border-radius: 50px; /* 이미지 둥글게 처리 */
+        }
+    </style>
 
-</style>
 </head>
 
 <body id="page-top">
@@ -48,7 +63,7 @@
 
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
-            <li class="nav-item">
+            <li class="nav-item active">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseOne"
                     aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
@@ -71,7 +86,7 @@
                 </li>
 
             <hr class="sidebar-divider my-0">
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-cog"></i>
@@ -112,7 +127,7 @@
 
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
-                
+
             <!-- Main Content -->
             <div id="content">
 
@@ -155,50 +170,21 @@
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
-                <div class="container-fluid" >
-                    <div class="container-fluid-1">
-                        <div id="demo" class="carousel slide" data-bs-ride="carousel" >
-
-                            <!-- Indicators/dots -->
-                            <div class="carousel-indicators" >
-                            <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
-                            <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
-                            <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
-                            <button type="button" data-bs-target="#demo" data-bs-slide-to="3"></button>
-                            <button type="button" data-bs-target="#demo" data-bs-slide-to="4"></button>
-                            <button type="button" data-bs-target="#demo" data-bs-slide-to="5"></button>
-                            </div>
-                        
-                            <!-- The slideshow/carousel -->
-                            <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img src="img/101ts-701xx.jpg" alt="701" class="d-block w=100">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="img/101ts-702xx.jpg" alt="702" class="d-block w=100">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="img/101ts-703xx.jpg" alt="703" class="d-block w=100">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="img/101ts-704xx.jpg" alt="704" class="d-block w=100">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="img/101ts-705xx.jpg" alt="705" class="d-block w=100">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="img/101ts-706xx.jpg" alt="706" class="d-block w=100">
-                            </div>
-                        
-                            <!-- Left and right controls/icons -->
-                            <button class="carousel-control-prev " type="button" data-bs-target="#demo" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon"></span>
-                            </button>
-                            <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
-                            <span class="carousel-control-next-icon"></span>
-                            </button>
-                        </div>
+                <div class="container-fluid">
+                    <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold text-primary">D-xola</h6>
                     </div>
+                    <div class="card-body">
+                        <p></p>
+                        <p class="mb-0">D-Xola는 Digital Transformation(DX)과 Solar의 결합을 의미하며, </P>
+                        <P>태양광 기술과 IOT 기반 스마트 제어를 통해 조선업의 지속 가능성과 경제적 효율성을 극대화하는 혁신적 솔루션입니다.</p>
+                    </div>
+                <div class="container-fluid-1">
+                    <img src="img/solution.png" class="rounded" alt="Cinque Terre" width="700">                    
+                    
+                </div>
+                <!-- /.container-fluid -->
+
             </div>
             <!-- End of Main Content -->
 
@@ -234,21 +220,5 @@
     <script src="js/sb-admin-2.min.js"></script>
 
 </body>
-
-<script>
-    function toggleDropdown() {
-        var dropdownContent = document.getElementById("dropdownImage");
-        if (dropdownContent.style.display === "none" || dropdownContent.style.display === "") {
-            dropdownContent.style.display = "block";
-        } else {
-            dropdownContent.style.display = "none";
-        }
-    }
-
-    function resizeImage(size) {
-        var image = document.getElementById("image");
-        image.style.maxWidth = size + "px";
-    }
-</script>
 
 </html>

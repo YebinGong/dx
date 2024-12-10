@@ -3,23 +3,33 @@
 
 <head>
 
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="3D Viewer for STL Files">
+    <meta name="author" content="Your Name">
 
-    <title>D-xola</title>
+    <title>D-xola - STL 3D Viewer</title>
 
-    <!-- Custom fonts for this template-->
+    <!-- Custom fonts and styles -->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
-
-    <!-- Custom styles for this template-->
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
+     <style>
+        #stl-viewer {
+            margin: 0;
+            padding: 0px;
+            width: 100vw;
+            height: 500px;  /* 수정: vh를 px로 변경 */
+            overflow: hidden;
+            position: relative;
+        }
+
+
+    </style>
 </head>
 
 <body id="page-top">
@@ -32,112 +42,64 @@
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-                <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
+                <div class="sidebar-brand-icon">
+                    <img src="img/12345.png" alt="" id="image", width="70", height="70"></i>
                 </div>
                 <div class="sidebar-brand-text mx-3">D-xola <sup></sup></div>
             </a>
 
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
-
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseOne"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Introduction</span>
+                </a>
+                <div id="collapseOne" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">                       
+                        <a class="collapse-item" href="dxola.html">D-Xola</a>
+                        <a class="collapse-item" href="team.html">Team</a>
+                    </div>
+                </div>
+            </li>
+            
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
-                <a class="nav-link" href="index.html">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                <a class="nav-link" href="dashboard.html">
+                    <i class="fas fa-fw fa-table"></i>
                     <span>Dashboard</span></a>
 
-                <a class="nav-link" href="pipe.html">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>PIPE</span></a>
+                </li>
 
-                <a class="nav-link" href="exa.html">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>EXA</span></a>        
-            </li>
-
-            <!-- Divider -->
-            <hr class="sidebar-divider">
-
-            <!-- Heading -->
-            <div class="sidebar-heading">
-                Interface
-            </div>
-
-            <!-- Nav Item - Pages Collapse Menu -->
+            <hr class="sidebar-divider my-0">
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-cog"></i>
-                    <span>Components</span>
+                    <span>Design</span>
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Custom Components:</h6>
-                        <a class="collapse-item" href="buttons.html">Buttons</a>
-                        <a class="collapse-item" href="cards.html">Cards</a>
+                    <div class="bg-white py-2 collapse-inner rounded">                       
+                        <a class="collapse-item" href="design.html">Design</a>
+                        <a class="collapse-item" href="pipe.html">Pipe</a>
                     </div>
                 </div>
             </li>
 
-            <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-                    aria-expanded="true" aria-controls="collapseUtilities">
+                <a class="nav-link" href="mockup.html">
                     <i class="fas fa-fw fa-wrench"></i>
-                    <span>Utilities</span>
-                </a>
-                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-                    data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Custom Utilities:</h6>
-                        <a class="collapse-item" href="utilities-color.html">Colors</a>
-                        <a class="collapse-item" href="utilities-border.html">Borders</a>
-                        <a class="collapse-item" href="utilities-animation.html">Animations</a>
-                        <a class="collapse-item" href="utilities-other.html">Other</a>
-                    </div>
-                </div>
+                    <span>Mock - Up</span></a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="visitor.html">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>Visitor</span></a>
             </li>
 
             <!-- Divider -->
-            <hr class="sidebar-divider">
-
-            <!-- Heading -->
-            <div class="sidebar-heading">
-                Addons
-            </div>
-
-            <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item active">
-                <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true"
-                    aria-controls="collapsePages">
-                    <i class="fas fa-fw fa-folder"></i>
-                    <span>Pages</span>
-                </a>
-                <div id="collapsePages" class="collapse show" aria-labelledby="headingPages"
-                    data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <div class="collapse-divider"></div>
-                        <h6 class="collapse-header">Other Pages:</h6>
-                        <a class="collapse-item" href="404.html">404 Page</a>
-                        <a class="collapse-item active" href="blank.html">Blank Page</a>
-                    </div>
-                </div>
-            </li>
-
-            <!-- Nav Item - Charts -->
-            <li class="nav-item">
-                <a class="nav-link" href="charts.html">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Charts</span></a>
-            </li>
-
-            <!-- Nav Item - Tables -->
-            <li class="nav-item">
-                <a class="nav-link" href="tables.html">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Tables</span></a>
-            </li>
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
@@ -209,28 +171,82 @@
                 </nav>
                 <!-- End of Topbar -->
 
-                <!-- Begin Page Content -->
                 <div class="container-fluid">
-
-                    <!-- Page Heading -->
-                    <h1 class="h3 mb-4 text-gray-800">Blank Page</h1>
-
-                </div>
-                <!-- /.container-fluid -->
-
-            </div>
-            <!-- End of Main Content -->
-
-            <!-- Footer -->
-            <footer class="sticky-footer bg-white">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2020</span>
+                    <div class="container-fluid">
+                        <h1>STL 3D Viewer</h1>
+                        <div id="stl-viewer" style="width: 100%; height: 500px;"></div>
                     </div>
-                </div>
-            </footer>
-            <!-- End of Footer -->
+                    <style>
+                        #stl-viewer {
+                            margin: 0;
+                            padding: 0;
+                            width: 100vw;
+                            height: 500px;
+                            overflow: hidden;
+                            position: relative;
+                        }
+                    </style>
+                    
+                    <!-- Three.js와 STLLoader 로딩 -->
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r110/three.min.js"></script>
+                    <script src="https://cdn.jsdelivr.net/npm/three/examples/js/loaders/STLLoader.js"></script>
+                    <script src='https://cdn.jsdelivr.net/npm/three/examples/js/controls/OrbitControls.js'></script>
+                    
+                    <script>
+                        const viewer = document.getElementById('stl-viewer');
+                        const scene = new THREE.Scene();
+                        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+                        const renderer = new THREE.WebGLRenderer();
+                
+                        // 렌더러 크기 설정
+                        renderer.setSize(viewer.clientWidth, viewer.clientHeight);
+                        viewer.appendChild(renderer.domElement);
+                        
+                        // 조명 추가
+                        const ambientLight = new THREE.AmbientLight(0x404040, 2);
+                        scene.add(ambientLight);
+                
+                        const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+                        directionalLight.position.set(5, 10, 7.5).normalize();
+                        scene.add(directionalLight);
+                
+                        // GitHub에서 STL 파일 로드
+                        const loader = new THREE.STLLoader();
+                        loader.load('https://raw.githubusercontent.com/YebinGong/dx/main/22.stl', (geometry) => {
+                            const material = new THREE.MeshStandardMaterial({ color: 0x0077ff, metalness: 0.5, roughness: 0.5 });
+                            const mesh = new THREE.Mesh(geometry, material);
+                            mesh.rotation.x = -Math.PI / 2;
+                            mesh.scale.set(0.1, 0.1, 0.1);
+                            scene.add(mesh);
+                
+                            // 모델의 Bounding Box 계산
+                            const boundingBox = new THREE.Box3().setFromObject(mesh);
+                            const center = boundingBox.getCenter(new THREE.Vector3());
+                
+                            // 모델을 화면 중앙에 위치시키기 위해 위치 조정
+                            mesh.position.sub(center); // Bounding Box의 중심을 (0, 0, 0)으로 이동
+                
+                            // 카메라 위치 조정 (모델이 잘 보이도록)
+                            camera.position.z = boundingBox.getSize(new THREE.Vector3()).length() * 1.5; // 모델 크기에 따라 카메라 위치 조정
+                            camera.lookAt(center); // 카메라가 모델을 바라보도록 설정
 
+                                                    
+                        }, undefined, (error) => {
+                            console.error('STL 파일 로드 중 오류 발생:', error);
+                        });
+
+                                                
+                        // 애니메이션 루프
+                        function animate() {
+                            requestAnimationFrame(animate);
+                            renderer.render(scene, camera);
+                        }
+                        animate();
+                    </script>
+                    </div>
+                
+                </div>
+                <!-- End Page Content -->
         </div>
         <!-- End of Content Wrapper -->
 
@@ -269,7 +285,19 @@
 
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
-
+    
 </body>
 
 </html>
+<script> 
+    function fitModelToScreen(mesh) {
+            const box = new THREE.Box3().setFromObject(mesh);
+            const size = box.getSize(new THREE.Vector3()).length();
+            const center = box.getCenter(new THREE.Vector3());
+            camera.near = size / 100;
+            camera.far = size * 10;
+            camera.position.set(center.x, center.y + size, center.z + size * 2);
+            camera.lookAt(center);
+            controls.update();
+        }
+</script>
