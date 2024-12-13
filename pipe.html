@@ -20,14 +20,37 @@
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
-<style>
-    .container-fluid-1{
-    display: flex; /* Flexbox 활성화 */
-    justify-content: center; /* 오른쪽 끝으로 정렬 */    
-    height: 100vh; /* 컨테이너 높이 (선택 사항) */
-}
-
-</style>
+    <style>
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%);
+            /* 화살표 색상: 흰색 (invert 값을 조정하면 다른 색상으로 변경 가능) */
+            background-color: transparent; /* 배경색 제거 */
+            width: 30px; /* 아이콘 크기 설정 */
+            height: 30px;
+        }
+        
+        .carousel-indicators button {
+            background-color: #000; /* 인디케이터 색상 설정 */
+            border: none; /* 인디케이터 테두리 제거 */
+            width: 12px; /* 동그라미 크기 */
+            height: 12px;
+            border-radius: 50%;
+            opacity: 0.7; /* 투명도 */
+        }
+        
+        .carousel-indicators button.active {
+            background-color: #fff; /* 활성화된 인디케이터 색상 */
+            opacity: 1;
+        }
+        </style>
+        <style>
+            .carousel-item img {
+                width: 50%; /* 이미지 너비를 조정 */
+                height: auto; /* 비율 유지 */
+                margin: 0 auto; /* 중앙 정렬 */
+            }
+        </style>
 </head>
 
 <body id="page-top">
@@ -155,50 +178,51 @@
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
-                <div class="container-fluid" >
-                    <div class="container-fluid-1">
-                        <div id="demo" class="carousel slide" data-bs-ride="carousel" >
-
-                            <!-- Indicators/dots -->
-                            <div class="carousel-indicators" >
+                <div class="container-fluid">
+                    <div id="demo" class="carousel slide" data-bs-ride="carousel">
+                        <!-- Indicators/dots -->
+                        <div class="carousel-indicators">
                             <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
                             <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
                             <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
                             <button type="button" data-bs-target="#demo" data-bs-slide-to="3"></button>
                             <button type="button" data-bs-target="#demo" data-bs-slide-to="4"></button>
                             <button type="button" data-bs-target="#demo" data-bs-slide-to="5"></button>
-                            </div>
-                        
-                            <!-- The slideshow/carousel -->
-                            <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img src="img/101ts-701xx.jpg" alt="701" class="d-block w=100">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="img/101ts-702xx.jpg" alt="702" class="d-block w=100">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="img/101ts-703xx.jpg" alt="703" class="d-block w=100">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="img/101ts-704xx.jpg" alt="704" class="d-block w=100">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="img/101ts-705xx.jpg" alt="705" class="d-block w=100">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="img/101ts-706xx.jpg" alt="706" class="d-block w=100">
-                            </div>
-                        
-                            <!-- Left and right controls/icons -->
-                            <button class="carousel-control-prev " type="button" data-bs-target="#demo" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon"></span>
-                            </button>
-                            <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
-                            <span class="carousel-control-next-icon"></span>
-                            </button>
                         </div>
+                    
+                        <!-- Slideshow -->
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="img/525tsww701.png" alt="701" class="d-block w-100" width="1050">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="img/525tsww702.png" alt="702" class="d-block w-100" width="1050">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="img/525tsyy702.png" alt="703" class="d-block w-100" width="1050">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="img/525tsyy703.png" alt="704" class="d-block w-100" width="1050">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="img/525tsxx702.png" alt="705" class="d-block w-100" width="1050">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="img/525tsxx702.png" alt="706" class="d-block w-100" width="1050">
+                            </div>
+                        </div>
+                    
+                        <!-- Navigation controls -->
+                        <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                        </button>
                     </div>
+
+                 
+                </div>
             </div>
             <!-- End of Main Content -->
 
@@ -206,7 +230,7 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2020</span>
+                        <span>Hanhwa Ocean Digital DX Academy &copy; D-Xola</span>
                     </div>
                 </div>
             </footer>

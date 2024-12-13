@@ -8,6 +8,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
+    <style>
+        .card {
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+        }
+
+        .card h3 {
+            margin: 0 0 5px 0;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .card p {
+            margin: 0;
+            font-size: 16px;
+            color: #666;
+        }
+
+        .btn-primary {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+
 
     <title>D-Xola</title>
 
@@ -19,7 +53,6 @@
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
-
 </head>
 
 <body id="page-top">
@@ -147,9 +180,73 @@
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
-                <div class="container-fluid">
-
-                    
+                <div class="card shadow mb-4">
+                    <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold text-primary">방명록</h6>
+                    </div>
+                    <div class="card-body">
+                        <form id="guestbookForm">
+                            <label for="name">Name:</label><br>
+                            <input type="text" id="name" name="name" required><br><br>
+                            <label for="message">Message:</label><br>
+                            <textarea id="message" name="message" rows="4" required></textarea><br><br>
+                            <button type="submit" class="btn btn-primary">입력</button>
+                        </form>
+                        <div id="guestbookEntries" style="margin-top: 20px;">
+                            <!-- Entries will appear here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            const form = document.getElementById('guestbookForm');
+            const entriesDiv = document.getElementById('guestbookEntries');
+        
+            // Load entries from LocalStorage
+            const loadEntries = () => {
+                const entries = JSON.parse(localStorage.getItem('guestbook')) || [];
+                entries.reverse().forEach(entry => {
+                    addEntryToPage(entry.name, entry.message);
+                });
+            };
+        
+            // Save entry to LocalStorage
+            const saveEntry = (name, message) => {
+                const entries = JSON.parse(localStorage.getItem('guestbook')) || [];
+                entries.push({ name, message });
+                localStorage.setItem('guestbook', JSON.stringify(entries));
+            };
+        
+            // Add entry to page as a card
+            const addEntryToPage = (name, message) => {
+                const card = document.createElement('div');
+                card.classList.add('card');
+                card.innerHTML = `
+                    <h3>${name}</h3>
+                    <p>${message}</p>
+                `;
+                entriesDiv.prepend(card); // prepend으로 맨 위에 추가
+            };
+        
+            // Handle form submission
+            form.addEventListener('submit', (event) => {
+                event.preventDefault();
+                const name = document.getElementById('name').value.trim();
+                const message = document.getElementById('message').value.trim();
+        
+                if (name && message) {
+                    saveEntry(name, message);
+                    addEntryToPage(name, message);
+                    form.reset();
+                } else {
+                    alert('모든 필드를 작성해 주세요.');
+                }
+            });
+        
+            // Initialize entries on page load
+            loadEntries();
+        </script>                
 
                 </div>
                 <!-- /.container-fluid -->
@@ -161,7 +258,7 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2020</span>
+                        <span>Hanhwa Ocean Digital DX Academy &copy; D-Xola</span>
                     </div>
                 </div>
             </footer>

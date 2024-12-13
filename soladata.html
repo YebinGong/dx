@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>D-xola</title>
+    <title>D-Xola</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -192,7 +192,9 @@
                                         </tfoot>
                                         <tbody>
                                             <tr>
-                                                <td></td>
+                                                <td>    <h1>MQTT Data Viewer</h1>
+                                                    <p>Received Data:</p>
+                                                    <div id="data">Waiting for data...</div></td>
                                                 <td></td>
                                                 <td></td>
                                                 <td></td>
@@ -240,7 +242,7 @@
                 <footer class="sticky-footer bg-white">
                     <div class="container my-auto">
                         <div class="copyright text-center my-auto">
-                            <span>Copyright &copy; Your Website 2020</span>
+                            <span>Hanhwa Ocean Digital DX Academy &copy; D-Xola</span>
                         </div>
                     </div>
                 </footer>
@@ -249,19 +251,7 @@
             </div>
             <!-- End of Content Wrapper -->
     
-        </div>
-            <!-- Footer -->
-            <footer class="sticky-footer bg-white">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2020</span>
-                    </div>
-                </div>
-            </footer>
-            <!-- End of Footer -->
 
-        </div>
-        <!-- End of Content Wrapper -->
 
     </div>
     <!-- End of Page Wrapper -->
@@ -280,7 +270,40 @@
 
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
+    <script>
+        // 1. MQTT 브로커에 연결
+        const brokerUrl = 'ws://192.168.0.38:9091/mqtt'; // MQTT 브로커 주소 (예: Mosquitto public broker)
+        const client = mqtt.connect(brokerUrl);
 
+        // 2. 연결 성공 이벤트
+        client.on('connect', () => {
+        console.log('Connected to MQTT Broker');
+
+        // 3. 토픽 구독
+        const topic = 'test/ArduiNoTopic'; // 원하는 토픽 이름
+        client.subscribe(topic, (err) => {
+            if (!err) {
+            console.log(`Subscribed to topic: ${topic}`);
+            } else {
+            console.error('Subscription error:', err);
+            }
+        });
+        });
+
+        // 4. 메시지 수신
+        client.on('message', (topic, message) => {
+        console.log(`Received message from ${topic}: ${message.toString()}`);
+
+        // 5. HTML 업데이트
+        const dataDiv = document.getElementById('data');
+        dataDiv.textContent = `Topic: ${topic}, Message: ${message.toString()}`;
+        });
+
+        // 연결 오류 이벤트
+        client.on('error', (err) => {
+        console.error('Connection error:', err);
+        });
+    </script>
 </body>
 
 </html>
