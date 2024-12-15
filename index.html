@@ -19,25 +19,53 @@
 <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
 <style>
-    #container-fluid {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100vw;
-        height: 100vh;
-        margin: 0;
-        padding: 0;
-        position: relative;
-        overflow: hidden;
-    }
+   /* 메인 컨테이너 스타일 */
+#container-fluid {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* 화면 높이 가득 채움 */
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
 
-    #container-fluid img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        position: relative;
-        transform: translateX(0px); /* 오른쪽으로 20px 이동 */
+/* 이미지 스타일 */
+#container-fluid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 화면을 가득 채우되 비율 유지 */
+    position: absolute; /* 이미지가 부모 컨테이너에 맞게 고정 */
+    top: 0;
+    left: 0;
+}
+
+/* 글씨 스타일 */
+.overlay-text {
+    position: absolute; /* 이미지 위에 위치 */
+    top: 20%; /* 세로 중앙 정렬 */
+    left: 25%; /* 가로 중앙 정렬 */
+    transform: translate(-50%, -50%); /* 정확한 중앙 정렬 */
+    color: white; /* 흰색 글씨 */
+    text-align: center; /* 글씨 가운데 정렬 */
+    font-size: 2.3rem; /* 글씨 크기 조정 */
+    font-weight: bold; /* 글씨 굵게 */
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7); /* 글씨 가독성을 높이기 위한 그림자 */
+}
+
+/* 모바일 반응형 */
+@media (max-width: 768px) {
+    .overlay-text {
+        left: 35%; /* 가로 중앙 정렬 */
+        font-size: 1.0rem; /* 모바일에서 글씨 크기 조정 */
+        padding: 0 10px; /* 글씨가 너무 붙지 않도록 여백 추가 */
     }
+    .img-fluid {
+        max-width: 100%;
+        margin-right: 1000px;
+
+    }
+}
+
 </style>
 
 
@@ -126,7 +154,10 @@
 
         <!-- Content Wrapper -->
         <div id="container-fluid" class="d-flex flex-column">
-            <img src="img/mainship.png" alt="Mainship" class="img-fluid ">
+            <img src="img/2.png" alt="Mainship" class="img-fluid">
+                <div class="overlay-text">
+                <h1>D-Xola</h1>
+                <p>태양광과 디지털 혁신의 만남,<br>조선업에 지속 가능성과 효율성을 더하다.</p></div>
         </div>
 
     </div>
